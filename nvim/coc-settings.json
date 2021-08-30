@@ -1,0 +1,13 @@
+{
+  "eslint.enable": true,
+  "cSpell.language": "en",
+  "html.enable": true,
+  "html.trace.server": "messages",
+  "html.format.enable": true,
+  "html.filetypes": ["html", "handlebars"],
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "html.format.endWithNewline": true,
+  "html.validate.styles": true,
+  "html.validate.html": true
+}
