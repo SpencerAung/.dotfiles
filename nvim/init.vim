@@ -5,6 +5,12 @@ au CursorHold * checktime
 imap jk <Esc>
 imap kj <Esc>
 
+"Open fzf tmux session
+nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
+
+" Make current file executable
+nnoremap <leader>x :!chmod +x %<CR>
+
 " Delete all buffer except current one
 nnoremap cb :%bd \| e#<CR>
 
@@ -125,6 +131,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
 
 " Handlebars
 Plug 'mustache/vim-mustache-handlebars'
@@ -139,6 +147,14 @@ Plug 'gruvbox-community/gruvbox'
 " Devicons
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'ryanoasis/vim-devicons'
+
+" PlantUML
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+
+" Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
