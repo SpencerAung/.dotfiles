@@ -139,7 +139,7 @@ function PrintDiagnostics(opts, bufnr, line_nr, client_id)
   end
   vim.api.nvim_echo({{diagnostic_message, "Normal"}}, false, {})
 end
-vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
+-- vim.cmd [[ autocmd CursorHold * lua PrintDiagnostics() ]]
 
 -- eslint
 local util = require "lspconfig".util
