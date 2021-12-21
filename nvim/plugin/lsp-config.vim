@@ -36,7 +36,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'elmls', 'cssls', 'html', 'eslint', 'tsserver', 'jdtls' }
+local servers = { 'elmls', 'cssls', 'html', 'eslint', 'jdtls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -45,6 +45,30 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+--- denols
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_dir = nvim_lsp.util.root_pattern("deno.json"),
+  init_options = {
+    lint = true,
+  },
+}
+
+-- tsserver
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  init_options = {
+    lint = true,
+  },
+}
 EOF
 
 " LSP auto format
