@@ -80,6 +80,10 @@ augroup SPENCER
   autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+" nvim-tree
+nmap ,n :NvimTreeFindFileToggle<cr>
+nmap ,m :NvimTreeToggle<cr>
+
 
 call plug#begin('~/.vim/plugged')
 
@@ -101,8 +105,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vuciv/vim-bujo'
 
 " NerdTree
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -156,6 +161,9 @@ Plug 'weirongxu/plantuml-previewer.vim'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Javascript
+Plug 'vuki656/package-info.nvim'
 
 call plug#end()
 
