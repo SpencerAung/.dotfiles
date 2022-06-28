@@ -1,12 +1,12 @@
 -- examples for your init.lua
 
 -- empty setup using defaults
-require("nvim-tree").setup({
-  view = {
-    side = "left",
-    preserve_window_proportions = true,
-  }
-})
+-- require("nvim-tree").setup({
+--   view = {
+--     side = "left",
+--     preserve_window_proportions = true,
+--   }
+-- })
 
 -- OR setup with some options
 -- require("nvim-tree").setup({
