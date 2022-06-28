@@ -106,6 +106,7 @@ Plug 'vuciv/vim-bujo'
 
 " NerdTree
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'kyazdani42/nvim-tree.lua'
 
@@ -152,7 +153,6 @@ Plug 'gruvbox-community/gruvbox'
 
 " Devicons
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'ryanoasis/vim-devicons'
 
 " PlantUML
 Plug 'aklt/plantuml-syntax'
