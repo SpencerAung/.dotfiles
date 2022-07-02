@@ -52,7 +52,7 @@ nvim_lsp.denols.setup {
   flags = {
     debounce_text_changes = 150,
   },
-  root_dir = nvim_lsp.util.root_pattern("deno.json"),
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
   init_options = {
     lint = true,
   },
@@ -69,6 +69,19 @@ nvim_lsp.tsserver.setup {
     lint = true,
   },
 }
+
+-- lsp-installer
+require("nvim-lsp-installer").setup({
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
+
 EOF
 
 " LSP auto format

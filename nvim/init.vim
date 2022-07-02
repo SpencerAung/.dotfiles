@@ -134,6 +134,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Neovim LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -210,5 +211,10 @@ let g:prettier#autoformat_config_files = ['.prettierrc']
 let g:prettier#automat_require_pragma = 0
 
 
+" Deno
+" To approrpiately highlight codefences returned from denols, you will need to augment vim.g.markdown_fenced languages in your init.lua.
+"vim.g.markdown_fenced_languages = {
+"  "ts=typescript"
+"}
 
 echo "Hello, Spencer >^.^<"
