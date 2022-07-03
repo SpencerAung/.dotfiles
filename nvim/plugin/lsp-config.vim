@@ -34,42 +34,7 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'elmls', 'cssls', 'html', 'eslint', 'jdtls' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
-
---- denols
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-  init_options = {
-    lint = true,
-  },
-}
-
--- tsserver
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  init_options = {
-    lint = true,
-  },
-}
-
+-- In order for nvim-lsp-installer to register the necessary hooks at the right moment, make sure you call the require("nvim-lsp-installer").setup() function before you set up any servers!
 -- lsp-installer
 require("nvim-lsp-installer").setup({
     automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
@@ -82,6 +47,58 @@ require("nvim-lsp-installer").setup({
     }
 })
 
+
+  -- Setup lspconfig. for nvim-cmp
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'elmls', 'cssls', 'html', 'eslint', 'jdtls', 'marksman' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+nvim_lsp.tailwindcss.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+}
+
+--- denols
+nvim_lsp.denols.setup {
+    capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  init_options = {
+    lint = true,
+  },
+}
+
+-- tsserver
+nvim_lsp.tsserver.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  init_options = {
+    lint = true,
+  },
+}
+
+
 EOF
 
 " LSP auto format
@@ -90,64 +107,9 @@ EOF
 " autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 " autocmd BufWritePre *.scss lua vim.lsp.buf.formatting_sync(nil, 100)
 
-" Autocompletion
-" nvim-cmp
 lua << EOF
--- Css & Html
--- Dependency: npm i -g vscode-langservers-extracted
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menu,menuone,noinsert,noselect'
-
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
-      elseif luasnip.expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if vim.fn.pumvisible() == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
-      elseif luasnip.jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
-
 vim.diagnostic.config({
   virtual_text = false,
   signs = true,
@@ -239,11 +201,11 @@ EOF
 
 " nvim-buffer
 " Setup buffer configuration
-autocmd FileType markdown lua require'cmp'.setup.buffer {
-\   sources = {
-\     { name = 'buffer' },
-\   },
-\ }
+" autocmd FileType markdown lua require'cmp'.setup.buffer {
+" \   sources = {
+" \     { name = 'buffer' },
+" \   },
+" \ }
 
 " auto format on save
 autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR>
