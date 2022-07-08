@@ -13,7 +13,7 @@ set noerrorbells
 set ignorecase
 set termguicolors
 set noshowmode
-set completeopt=menuone,noinsert,noselect
+"set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
 set signcolumn=yes
 set incsearch
@@ -36,10 +36,10 @@ set shortmess+=c
 
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
-set path+=**
+" set path+=**
 
 " Display all matching files when we tab complete
-set wildmenu
+" set wildmenu
 
 " Ignore node_modules folder
-set wildignore+=**/node_modules/**
+" set wildignore+=**/node_modules/**
