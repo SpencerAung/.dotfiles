@@ -1,29 +1,15 @@
 -- examples for your init.lua
 
 -- empty setup using defaults
--- require("nvim-tree").setup({
---   view = {
---     side = "left",
---     preserve_window_proportions = true,
---   }
--- })
+require("nvim-tree").setup({
+  view = {
+    side = "left",
+    centralize_selection = true,
+    adaptive_size = true,
+    preserve_window_proportions = true,
+  }
+})
 
--- OR setup with some options
--- require("nvim-tree").setup({
---   sort_by = "case_sensitive",
---   view = {
---     adaptive_size = true,
---     mappings = {
---       list = {
---         { key = "u", action = "dir_up" },
---       },
---     },
---   },
---   renderer = {
---     group_empty = true,
---   },
---   filters = {
---     dotfiles = true,
---   },
--- })
-
+vim.api.nvim_set_keymap("n", ",n", "<cmd>NvimTreeFindFileToggle<cr>",
+  {silent = true, noremap = true }
+)

@@ -98,17 +98,17 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'tpope/vim-unimpaired'
 Plug 'edkolev/tmuxline.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'airblade/vim-rooter'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
 
 Plug 'vuciv/vim-bujo'
 
 " NerdTree
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+ Plug 'kyazdani42/nvim-tree.lua'
 
 " Fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -156,6 +156,7 @@ Plug 'gruvbox-community/gruvbox'
 
 " Devicons
 Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " PlantUML
 Plug 'aklt/plantuml-syntax'
@@ -184,12 +185,6 @@ au syntax * RainbowParenthesesLoadBraces
 " vim-rooter
 let g:rooter_patterns = ['.git/']
 let g:rooter_manual_only = 1
-
-" vim-indent-guide
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-
 
 " Theme
 "

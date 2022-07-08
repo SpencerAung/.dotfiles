@@ -14,10 +14,12 @@ set ignorecase
 set termguicolors
 set noshowmode
 "set completeopt=menuone,noinsert,noselect
-set colorcolumn=80
+set colorcolumn=100
 set signcolumn=yes
 set incsearch
 set scrolloff=8
+set nowrap
+set cursorline
 
 set noswapfile
 set nobackup
