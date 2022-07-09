@@ -102,6 +102,7 @@ Plug 'airblade/vim-rooter'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
+Plug 'noib3/nvim-cokeline'
 
 Plug 'vuciv/vim-bujo'
 
