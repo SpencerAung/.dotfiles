@@ -7,19 +7,19 @@ vim.opt.listchars:append("eol:↵")
 -- vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
 
 require("indent_blankline").setup {
-    -- for example, context is off by default, use this to turn it on
-    -- show_current_context = true,
-    -- show_current_context_start = true,
-    -- show_end_of_line = true,
+  -- for example, context is off by default, use this to turn it on
+  -- show_current_context = true,
+  -- show_current_context_start = true,
+  -- show_end_of_line = true,
 
-    -- char = "",
-    -- char_highlight_list = {
-    --     "IndentBlanklineIndent1",
-    --     "IndentBlanklineIndent2",
-    -- },
-    -- space_char_highlight_list = {
-    --     "IndentBlanklineIndent1",
-    --     "IndentBlanklineIndent2",
-    -- },
-    -- show_trailing_blankline_indent = false,
+  -- char = "",
+  -- char_highlight_list = {
+  --     "IndentBlanklineIndent1",
+  --     "IndentBlanklineIndent2",
+  -- },
+  -- space_char_highlight_list = {
+  --     "IndentBlanklineIndent1",
+  --     "IndentBlanklineIndent2",
+  -- },
+  -- show_trailing_blankline_indent = false,
 }
