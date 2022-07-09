@@ -45,3 +45,8 @@ set shortmess+=c
 
 " Ignore node_modules folder
 " set wildignore+=**/node_modules/**
+
+
+" Tree-sitter based folding. (Technically not a module because it's per windows and not per buffer.)
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
