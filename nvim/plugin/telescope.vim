@@ -5,6 +5,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>ps <cmd>Telescope grep_string<cr>
 nnoremap <leader>gg <cmd>Telescope live_grep<cr>
+nnoremap <leader>df <cmd>Telescope lsp_document_symbols<cr>
 
 lua << EOF
   require('telescope').setup {

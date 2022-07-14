@@ -1,5 +1,7 @@
 au CursorHold * checktime
 
+"##### leader
+let mapleader = " "
 "##### Key mappings
 
 imap jk <Esc>
@@ -102,9 +104,9 @@ Plug 'airblade/vim-rooter'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
-Plug 'noib3/nvim-cokeline'
-
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'vuciv/vim-bujo'
+Plug 'junegunn/goyo.vim'
 
 " NerdTree
 " Plug 'preservim/nerdtree'
