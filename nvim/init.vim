@@ -170,6 +170,7 @@ Plug 'weirongxu/plantuml-previewer.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Javascript
+Plug 'MunifTanjim/nui.nvim'
 Plug 'vuki656/package-info.nvim'
 
 call plug#end()

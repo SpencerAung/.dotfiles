@@ -1,3 +1,6 @@
+-- https://github.com/vuki656/package-info.nvim
+require('package-info').setup({
+})
 -- Show dependency versions
 vim.keymap.set({ "n" }, "<LEADER>ns", require("package-info").show, { silent = true, noremap = true })
 
