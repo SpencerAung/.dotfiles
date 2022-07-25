@@ -107,6 +107,7 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'vuciv/vim-bujo'
 Plug 'junegunn/goyo.vim'
+Plug 'fladson/vim-kitty'
 
 " NerdTree
 " Plug 'preservim/nerdtree'
