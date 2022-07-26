@@ -91,7 +91,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
 Plug 'airblade/vim-gitgutter'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
 Plug 'numToStr/Comment.nvim'
 Plug 'joegesualdo/jsdoc.vim'
 Plug 'tpope/vim-surround'
@@ -102,21 +102,19 @@ Plug 'tpope/vim-unimpaired'
 Plug 'edkolev/tmuxline.vim'
 Plug 'airblade/vim-rooter'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'folke/trouble.nvim'
+" Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-Plug 'vuciv/vim-bujo'
+" Plug 'vuciv/vim-bujo'
 Plug 'junegunn/goyo.vim'
 Plug 'fladson/vim-kitty'
 
 " NerdTree
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
  Plug 'kyazdani42/nvim-tree.lua'
 
 " Fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
 " Fixer
 " Plug 'dense-analysis/ale'
@@ -162,14 +160,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'ryanoasis/vim-devicons'
 
-" PlantUML
-Plug 'aklt/plantuml-syntax'
-Plug 'tyru/open-browser.vim'
-Plug 'weirongxu/plantuml-previewer.vim'
-
-" Coc
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Javascript
 Plug 'MunifTanjim/nui.nvim'
 Plug 'vuki656/package-info.nvim'
@@ -181,10 +171,10 @@ call plug#end()
 let g:tmuxline_powerline_separators = 0
 
 " rainbow_parentheses
-au vimenter * RainbowParenthesesToggle
-au syntax * RainbowParenthesesLoadRound
-au syntax * RainbowParenthesesLoadSquare
-au syntax * RainbowParenthesesLoadBraces
+" au vimenter * RainbowParenthesesToggle
+" au syntax * RainbowParenthesesLoadRound
+" au syntax * RainbowParenthesesLoadSquare
+" au syntax * RainbowParenthesesLoadBraces
 
 
 " vim-rooter
