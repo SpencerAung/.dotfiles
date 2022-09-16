@@ -50,3 +50,4 @@ set shortmess+=c
 " Tree-sitter based folding. (Technically not a module because it's per windows and not per buffer.)
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
+" autocmd BufReadPost,FileReadPost * normal zR

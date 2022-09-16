@@ -73,17 +73,17 @@ nvim_lsp.tailwindcss.setup{
 }
 
 --- denols
-nvim_lsp.denols.setup {
-    capabilities = capabilities,
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-  init_options = {
-    lint = true,
-  },
-}
+-- nvim_lsp.denols.setup {
+--     capabilities = capabilities,
+--   on_attach = on_attach,
+--   flags = {
+--     debounce_text_changes = 150,
+--   },
+--   root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+--   init_options = {
+--     lint = true,
+--   },
+-- }
 
 -- tsserver
 nvim_lsp.tsserver.setup {

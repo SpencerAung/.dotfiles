@@ -155,6 +155,7 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Themes
 Plug 'jaredgorski/spacecamp'
 Plug 'gruvbox-community/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Devicons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -188,8 +189,14 @@ let g:rooter_manual_only = 1
 " colorscheme spacecamp_lite
 
 " Gruxbox Theme
-colorscheme gruvbox
-highlight Normal guibg=none
+" colorscheme gruvbox
+" highlight Normal guibg=none
+"
+" Tokyo Night
+colorscheme tokyonight
+" colorscheme tokyonight-night
+" colorscheme tokyonight-storm
+" colorscheme tokyonight-day
 
 
 " Prettier
