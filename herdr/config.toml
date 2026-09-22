@@ -1,0 +1,14 @@
+onboarding = false
+
+[keys]
+# tmux-style pane splits
+split_vertical = "prefix+%"      # tmux: side-by-side panes
+split_horizontal = "prefix+\""   # tmux: stacked panes
+# tmux-style window (tab) management
+rename_tab = "prefix+comma"      # tmux: prefix+,
+close_tab = "prefix+ampersand"   # tmux: prefix+&
+last_pane = "prefix+semicolon"   # tmux: prefix+;
+cycle_pane_next = "prefix+o"     # tmux: prefix+o cycles pane focus
+open_notification_target = "prefix+shift+o"  # moved off prefix+o
+detach = "prefix+d"              # moved off prefix+q
+goto = "prefix+q"                # closest herdr equivalent to tmux's display-panes: jump-to picker
